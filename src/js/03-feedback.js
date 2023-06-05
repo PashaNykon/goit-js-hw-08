@@ -14,7 +14,9 @@ function onFormInput(event) {
 }
 
 function fillFromStorage() {
-    let storageValues = JSON.parse(localStorage.getItem('feedback-form-state'));
+   
+    let storageValues = JSON.parse(localStorage.getItem('feedback-form-state')) || {};
+    arrayValues = storageValues; 
     if (storageValues) {
         if (storageValues.email) {
             formEL.elements.email.value = storageValues.email;
